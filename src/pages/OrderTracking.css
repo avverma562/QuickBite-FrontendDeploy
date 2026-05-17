@@ -1,0 +1,283 @@
+.tracking-page {
+  padding-top: 90px;
+  padding-bottom: 60px;
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+.tracking-container {
+  max-width: 700px;
+}
+
+.tracking-header {
+  margin-bottom: 2rem;
+}
+
+.tracking-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.order-id {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.tracking-content {
+  padding: 2.5rem;
+}
+
+/* ETA / Status Header */
+.status-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.eta-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.4);
+}
+
+.eta-time {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.eta-mins {
+  font-size: 0.85rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.status-text h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+}
+
+.status-text p {
+  color: var(--text-muted);
+}
+
+/* Progress Bar */
+.progress-container {
+  margin-bottom: 2rem;
+}
+
+.progress-bar-bg {
+  height: 6px;
+  background-color: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 3px;
+}
+
+.steps-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  position: relative;
+  opacity: 0.4;
+  transition: opacity 0.3s;
+}
+
+.step-item.active {
+  opacity: 1;
+}
+
+.step-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all 0.3s;
+}
+
+.step-item.active .step-icon-wrapper {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.35);
+}
+
+.step-item.current .step-icon-wrapper {
+  animation: pulse-icon 1.5s infinite;
+}
+
+@keyframes pulse-icon {
+  0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); }
+  70% { box-shadow: 0 0 0 12px rgba(249, 115, 22, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+}
+
+.step-info {
+  text-align: center;
+}
+
+.step-info h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  white-space: nowrap;
+}
+
+.step-info p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Delivery Agent Card */
+.delivery-agent-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  background: var(--background);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+
+.agent-profile {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.agent-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary);
+}
+
+.agent-details h4 {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.agent-details p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.agent-rating {
+  font-size: 0.85rem;
+  color: var(--text-main);
+  margin-top: 0.25rem;
+}
+
+.star {
+  color: #f59e0b;
+}
+
+.agent-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.action-btn.icon-only {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-btn.icon-only:hover {
+  background: var(--border);
+  color: var(--primary);
+}
+
+/* Address Card */
+.delivery-address-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.address-info h4 {
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+}
+
+.address-info p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 576px) {
+  .tracking-content {
+    padding: 1.5rem;
+  }
+
+  .steps-wrapper {
+    gap: 0.5rem;
+  }
+  
+  .step-info h4 {
+    font-size: 0.75rem;
+  }
+
+  .eta-circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .eta-time {
+    font-size: 2rem;
+  }
+}

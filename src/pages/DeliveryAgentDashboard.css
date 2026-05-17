@@ -1,0 +1,294 @@
+.agent-dashboard {
+  min-height: 100vh;
+  background-color: var(--background);
+  padding-bottom: 80px;
+}
+
+.agent-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.agent-profile-mini {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar-small {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.agent-profile-mini h3 {
+  font-size: 1rem;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.agent-profile-mini p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.status-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+}
+
+.text-green { color: #2e7d32; }
+
+.agent-main {
+  padding-top: 2rem;
+  max-width: 600px;
+}
+
+.earnings-banner {
+  background: linear-gradient(135deg, var(--text-main), var(--surface));
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border: none;
+}
+
+.earnings-banner p {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.earnings-banner h2 {
+  font-size: 2.5rem;
+}
+
+.earnings-stats {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.stat span {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.stat strong {
+  font-size: 1.2rem;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.offline-state, .empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.offline-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+/* Radar Animation */
+.radar-animation {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 2rem;
+}
+
+.radar-animation span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background: rgba(249, 115, 22, 0.5);
+  border-radius: 50%;
+  animation: radar 2s linear infinite;
+}
+
+.radar-animation span:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.radar-animation span:nth-child(3) {
+  animation-delay: 1.2s;
+}
+
+@keyframes radar {
+  0% { width: 20px; height: 20px; opacity: 1; }
+  100% { width: 100px; height: 100px; opacity: 0; }
+}
+
+/* Delivery Card */
+.delivery-order-card {
+  padding: 1.5rem;
+  border-left: 4px solid var(--primary);
+}
+
+.order-card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed var(--border);
+}
+
+.order-id {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.order-distance {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.delivery-route {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.route-point {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.point-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  background: var(--background);
+}
+
+.pickup .point-icon {
+  border: 2px solid var(--text-main);
+  color: var(--text-main);
+}
+
+.dropoff .point-icon {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.route-line {
+  position: absolute;
+  left: 15px;
+  top: 32px;
+  bottom: 32px;
+  width: 2px;
+  background: var(--border);
+  z-index: 1;
+}
+
+.point-details {
+  flex: 1;
+}
+
+.point-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.point-details h4 {
+  font-size: 1.1rem;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+}
+
+.point-details p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.icon-btn-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  background: var(--surface);
+}
+
+.order-card-footer {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.earning-estimate {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.earning-estimate strong {
+  color: #2e7d32;
+  font-size: 1.1rem;
+}
+
+.btn-success {
+  background: #2e7d32;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}

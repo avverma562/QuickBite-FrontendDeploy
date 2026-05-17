@@ -1,0 +1,267 @@
+.home-page {
+  padding-top: 70px;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 4rem 0;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+  z-index: -1;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 500px;
+}
+
+.hero-actions {
+  margin-top: 1rem;
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image-blob {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  animation: blob-morph 8s ease-in-out infinite alternate;
+}
+
+@keyframes blob-morph {
+  0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Categories */
+.categories-section {
+  padding: 4rem 0;
+  background-color: var(--surface);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.view-all-link {
+  color: var(--primary);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.view-all-link:hover {
+  text-decoration: underline;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1.5rem;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.category-icon {
+  font-size: 2.5rem;
+}
+
+.category-name {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* Featured Restaurants */
+.featured-section {
+  padding: 5rem 0;
+}
+
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.restaurant-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.restaurant-image-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.restaurant-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.restaurant-card:hover .restaurant-image {
+  transform: scale(1.05);
+}
+
+.delivery-time-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.restaurant-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.restaurant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.restaurant-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.restaurant-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: var(--background);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.restaurant-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.tag {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: var(--background);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.tag-price {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-left: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .hero-content {
+    align-items: center;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-image-wrapper {
+    order: -1;
+  }
+}
